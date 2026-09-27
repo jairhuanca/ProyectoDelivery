@@ -2,7 +2,7 @@
 """
 Created on Mon Sep  7 20:08:58 2026
 
-@author: jairh
+@author: Grupo 5
 """
 
 # -*- coding: utf-8 -*-
