@@ -17,6 +17,9 @@ VEHICULOS = [
 ]
 
 def calcular_tiempo_viaje(distancia_km, velocidad_kmh):
+    #Función que calcula la duración de un viaje en minutos basándose en la distancia y la velocidad de traslado.
+    #Divide los kilómetros entre la velocidad para obtener las horas, convierte el resultado a minutos y lo devuelve 
+    #redondeado a dos decimales, asegurando además que no ocurra un error si la velocidad es cero o menor.
     if velocidad_kmh <= 0:
         return 0.0
     horas = distancia_km / velocidad_kmh
@@ -24,6 +27,7 @@ def calcular_tiempo_viaje(distancia_km, velocidad_kmh):
     return round(minutos, 2)
 
 def evaluar_vehiculos_para_distancia(distancia_km):
+    #Esta función genera un reporte comparativo del tiempo de viaje para diferentes medios de transporte ante una distancia dada. 
     resultados = []
     for v in VEHICULOS:
         t_min = calcular_tiempo_viaje(distancia_km, v["velocidad_kmh"])
