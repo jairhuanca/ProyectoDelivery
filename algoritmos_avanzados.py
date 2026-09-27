@@ -16,7 +16,7 @@ from concurrent.futures import ProcessPoolExecutor
 def resolver_backtracking(matriz):
     """
     Encuentra la ruta más corta probando diferentes caminos de entrega (Backtracking).
-    Si a mitad de un camino la distancia ya supera a la mejor ruta que teníamos guardada, 
+    Si a mitad de un camino la distancia ya supera a la mejor ruta que teníamos guardada, se
     cancela ese camino de inmediato para ahorrar tiempo (Poda).
     """
     n = len(matriz)
