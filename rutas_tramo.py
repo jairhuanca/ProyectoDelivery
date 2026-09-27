@@ -9,6 +9,9 @@ GESTION DE TRAMOS, ORDENAMIENTO Y CAMBIO VORAZ
 """
 
 def crear_tramo(origen, destino, kilometros):
+    #Esta función crea y organiza los datos de un tramo de viaje en un formato estructurado de diccionario. 
+    #Recibe un punto de partida, un destino y la distancia, asegura que los kilómetros se registren como un número decimal y 
+    #agrupa toda la información en un solo objeto fácil de usar.
     return {
         "origen": origen,
         "destino": destino,
