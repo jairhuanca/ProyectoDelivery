@@ -19,9 +19,15 @@ def crear_tramo(origen, destino, kilometros):
     }
 
 def calcular_distancia_total(lista_rutas):
+    #Calcula la distancia total acumulada de un viaje sumando los kilómetros de cada uno de sus tramos. 
+    #Recorre una lista de rutas para extraer el valor de los kilómetros de cada sección y devuelve la suma de todo el recorrido.
     return sum(tramo["kilometros"] for tramo in lista_rutas)
 
 def ordenamiento_burbuja_tramos(lista_rutas, clave="kilometros"):
+    #Esta función ordena una lista de rutas de menor a mayor comparando y acomodando los elementos de forma consecutiva.
+    #Utiliza el algoritmo de ordenamiento burbuja (Bubble Sort), el cual revisa la lista repetidamente para intercambiar 
+    #las posiciones de las rutas contiguas si están en el orden incorrecto según la característica elegida (como los kilómetros).
+
     lista = list(lista_rutas)
     n = len(lista)
     for i in range(n):
@@ -31,6 +37,10 @@ def ordenamiento_burbuja_tramos(lista_rutas, clave="kilometros"):
     return lista
 
 def ordenamiento_quicksort_tramos(lista_rutas, clave="kilometros"):
+    #Esta función calcula el tiempo de viaje estimado para realizar un envío directo entre dos puntos según 
+    #el tipo de transporte utilizado. A partir del vehículo seleccionado, determina su velocidad promedio, 
+    #calcula la duración del trayecto en minutos y devuelve un resumen detallado con los datos del viaje.
+    
     if len(lista_rutas) <= 1:
         return lista_rutas
     
@@ -42,6 +52,10 @@ def ordenamiento_quicksort_tramos(lista_rutas, clave="kilometros"):
     return ordenamiento_quicksort_tramos(menores, clave) + iguales + ordenamiento_quicksort_tramos(mayores, clave)
 
 def cambio_monedas_delivery(denominaciones, monto):
+    #Función que calcula la menor cantidad de monedas necesarias para dar un vuelto.
+    #Utiliza un enfoque voraz que consiste en repartir primero las monedas de mayor valor hasta cubrir el total, 
+    #devolviendo el desglose de las monedas utilizadas y el saldo restante que no se pudo simplificar.
+
     denominaciones_ord = sorted(denominaciones, reverse=True)
     resultado = []
     monto_restante = monto
