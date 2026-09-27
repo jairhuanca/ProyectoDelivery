@@ -26,6 +26,8 @@ def calcular_matriz_distancias(puntos):
     return matriz
 
 def resolver_fuerza_bruta(matriz):
+    #Esta función encuentra la ruta más corta para visitar un grupo de puntos y regresar al origen.
+    #Prueba todas las combinaciones posibles, compara sus distancias y devuelve el recorrido más eficiente junto con su costo total.
     n = len(matriz)
     if n <= 1:
         return [0], 0.0
@@ -45,6 +47,9 @@ def resolver_fuerza_bruta(matriz):
     return mejor_ruta, round(mejor_distancia, 2)
 
 def resolver_greedy(matriz):
+    #Esta función construye una ruta rápida eligiendo siempre el punto más cercano disponible en cada paso.
+    #Arranca en el origen, avanza hacia el vecino inmediato no visitado y finalmente regresa al inicio, 
+    #entregando una solución aproximada de forma muy veloz.
     n = len(matriz)
     if n <= 1:
         return [0], 0.0
@@ -78,6 +83,10 @@ def resolver_greedy(matriz):
 
 #  CÁLCULO DE RUTA Y TIEMPO PUNTO A PUNTO
 def calcular_entrega_directa(origen, destino, km, vehiculo_nombre):
+    #Esta función calcula el tiempo de viaje estimado para realizar un envío directo entre dos puntos según el tipo de transporte utilizado.
+    #A partir del vehículo seleccionado, determina su velocidad promedio, calcula la duración del trayecto en minutos y devuelve un 
+    #resumen detallado con los datos del viaje.
+    
     velocidades = {"Bicicleta": 15.0, "Moto": 40.0, "Auto": 30.0}
     vel = velocidades.get(vehiculo_nombre, 30.0)
     
