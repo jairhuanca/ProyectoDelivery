@@ -37,9 +37,8 @@ def ordenamiento_burbuja_tramos(lista_rutas, clave="kilometros"):
     return lista
 
 def ordenamiento_quicksort_tramos(lista_rutas, clave="kilometros"):
-    #Esta función calcula el tiempo de viaje estimado para realizar un envío directo entre dos puntos según 
-    #el tipo de transporte utilizado. A partir del vehículo seleccionado, determina su velocidad promedio, 
-    #calcula la duración del trayecto en minutos y devuelve un resumen detallado con los datos del viaje.
+   #Acomoda los caminos del más corto al más largo eligiendo un tramo como guía 
+   #y separando los demás entre los que miden menos y los que miden más.
     
     if len(lista_rutas) <= 1:
         return lista_rutas
