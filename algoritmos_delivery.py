@@ -14,6 +14,7 @@ from vehiculos_metodos import calcular_tiempo_viaje
 
 #  MATRIZ Y TSP POR COORDENADAS
 def calcular_matriz_distancias(puntos):
+    #Esta función calcula la distancia en línea recta entre todos los pares de puntos de una lista.
     n = len(puntos)
     matriz = [[0.0] * n for _ in range(n)]
     for i in range(n):
