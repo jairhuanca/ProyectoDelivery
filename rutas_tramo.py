@@ -2,7 +2,7 @@
 """
 Created on Mon Sep  7 20:10:12 2026
 
-@author: jairh
+@author: Grupo 5
 """
 """
 GESTION DE TRAMOS, ORDENAMIENTO Y CAMBIO VORAZ
